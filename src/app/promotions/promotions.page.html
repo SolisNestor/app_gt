@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+    <ion-toolbar  [color]="dynamicColor">
+        <ion-title class="ion-text-center">
+            Guatemala.com
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <ion-list>
+        <ion-list-header>
+            Estas son nuestras promociones del mes:
+        </ion-list-header>
+
+        <ion-item button (click)="goToPromo(promo.id)" *ngFor="let promo of promotions">
+            <ion-avatar slot="start">
+                <img src="{{promo.img}}">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{promo.name}}</h2>
+                <h3>{{promo.price}}</h3>
+                <p>{{promo.short_description}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
